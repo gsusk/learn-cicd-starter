@@ -24,6 +24,8 @@ type apiConfig struct {
 //go:embed static/*
 var staticFiles embed.FS
 
+func supposedToFailFunc() {}
+
 func main() {
 	err := godotenv.Load(".env")
 	if err != nil {
@@ -52,7 +54,6 @@ func main() {
 		apiCfg.DB = dbQueries
 		log.Println("Connected to database!")
 	}
-
 	router := chi.NewRouter()
 
 	router.Use(cors.Handler(cors.Options{
