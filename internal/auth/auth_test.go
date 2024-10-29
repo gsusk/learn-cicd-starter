@@ -23,7 +23,7 @@ func TestGetApiKey(t *testing.T) {
 		t.Run(name, func(t *testing.T) {
 			got, err := auth.GetAPIKey(tc.input)
 
-			if got == tc.want {
+			if got != tc.want {
 				t.Fatalf("want: %#v, got: %#v", tc.want, got)
 			}
 
