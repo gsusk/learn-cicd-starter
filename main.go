@@ -52,7 +52,6 @@ func main() {
 		apiCfg.DB = dbQueries
 		log.Println("Connected to database!")
 	}
-
 	router := chi.NewRouter()
 
 	router.Use(cors.Handler(cors.Options{
